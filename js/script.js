@@ -34,37 +34,42 @@ rps.addEventListener("click", (event) => {
         const words = ["rock", "paper", "scissors"];
         let word = words[Math.floor(Math.random() * words.length)];
         console.log(word);
-        if(userInput.value == word) {
-            winner.innerHTML = "Draw!";
-        } else if(userInput.value == "rock") {
-            if(word == "paper") {
-                winner.innerHTML = "Computer Wins!";
-            }
-        } else if(userInput.value == "paper") {
-            if(word == "scissors") {
-                winner.innerHTML = "Computer Wins!";
-            }
-        } else if(userInput.value == "scissors") {
-            if(word == "paper") {
-                winner.innerHTML = "You Win!";
-            }
-        } else if(userInput.value == "paper") {
-            if(word == "rock") {
-                winner.innerHTML = "You Win!";
-            }
-        } else if(userInput.value == "scissors") {
-            if(word == "rock") {
-                winner.innerHTML = "Computer Wins!";
-            }
-        } else if(userInput.value == "rock") {
-            if(word == "scissors") {
-                winner.innerHTML = "You Win!";
-            }
-        } else {
-            winner.innerHTML = "they dont match";
-        }
         computerChoice.innerHTML = word;
-        userInput.value = "";
+        if (userInput.value === word) {
+                winner.innerHTML = "It's a tie!";
+                userInput.value = "";
+            }
+            if (userInput.value === "rock") {
+                if (word === "scissors") {
+                    // rock wins
+                    winner.innerHTML = "You win!";
+                    
+                } else {
+                    // paper wins
+                    winner.innerHTML = "You lose! Try again.";
+                }
+                userInput.value = "";
+            }
+            if (userInput.value === "paper") {
+                if (word === "rock") {
+                    // paper wins
+                    winner.innerHTML = "You win!";
+                } else {
+                    // scissors wins
+                    winner.innerHTML = "You lose! Try again.";
+                }
+                userInput.value = "";
+            }
+            if (userInput.value === "scissors") {
+                if (word === "rock") {
+                    // rock wins
+                    winner.innerHTML = "You lose! Try again.";
+                } else {
+                    // scissors wins
+                    winner.innerHTML = "You win!";
+                }
+                userInput.value = "";
+        }
     } 
 });
 
