@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html>
-
   <head>
       <title>RPS Game</title>
       <!-- Link CSS here -->
-      
-      <!-- Link JQuery here -->
-      
-      <!-- Link Javascript File here -->
-      
-      <!-- Latest compiled and minified Bootstrap CSS -->
-      
+      <link type="text/css" rel="stylesheet" href="css/style.css">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
-
   <body>
       <!-- TASK 1: In the div below. 
         1. In a header tag, add a title.
@@ -22,14 +16,41 @@
         5. Add divs to record User Choice and Computer Choice.
         6. Add a div to record the Winner.
      -->
-    <div class="container text-center">
-    
-      
-
-
-    
+    <div id="rps" class="container text-center">
+      <header>
+        <h1>Rock, Paper, Scissors</h1>
+      </header>
+      <p>This is a rock, paper, scissors game and the rules is you type either rock, paper, or scissors input the input and if you win it will be printed out if not then "the computer wins" will be printed out if a tie it will print out a "draw". Now are you ready to play?</p>
+      <!-- image -->
+      <img src="http://bit.ly/2ySGzUa" width="100%" height="350px" />
+      <table>
+        <tr>
+          <td>
+            <input type="text" id="user-input" placeholder="RPS">
+            <button id="shoot" type="button">Shoot!</button>
+          </td>
+        </tr>
+      </table>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-xs-6">
+            <h1>Your Choice</h1>
+            <span class="user-choice"></span>
+          </div>
+          <div class="col-md-6 col-xs-6">
+            <h1>Computers Choice</h1>
+            <span class="computer-choice"></span>
+          </div>
+        </div>
+      </div>
+      <div class="winner"></div>
     </div>
-
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
   </body>
-
 </html>

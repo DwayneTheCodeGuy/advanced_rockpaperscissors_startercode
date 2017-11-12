@@ -19,7 +19,54 @@
 //****************** SERIOUSLY TEST USING console.log()!!! ******************
 
 //GLOBAL VARIABLES
+const rps = document.getElementById("rps");
+const userInput = document.getElementById("user-input");
+const userChoice = document.querySelector(".user-choice");
+const shoot = document.getElementById("shoot");
+const computerChoice = document.querySelector(".computer-choice");
+const winner = document.querySelector(".winner");
 
+
+
+rps.addEventListener("click", (event) => {
+    if(event.target.id == "shoot") {
+        userChoice.innerHTML = userInput.value;
+        const words = ["rock", "paper", "scissors"];
+        let word = words[Math.floor(Math.random() * words.length)];
+        console.log(word);
+        if(userInput.value == word) {
+            winner.innerHTML = "Draw!";
+        } else if(userInput.value == "rock") {
+            if(word == "paper") {
+                winner.innerHTML = "Computer Wins!";
+            }
+        } else if(userInput.value == "paper") {
+            if(word == "scissors") {
+                winner.innerHTML = "Computer Wins!";
+            }
+        } else if(userInput.value == "scissors") {
+            if(word == "paper") {
+                winner.innerHTML = "You Win!";
+            }
+        } else if(userInput.value == "paper") {
+            if(word == "rock") {
+                winner.innerHTML = "You Win!";
+            }
+        } else if(userInput.value == "scissors") {
+            if(word == "rock") {
+                winner.innerHTML = "Computer Wins!";
+            }
+        } else if(userInput.value == "rock") {
+            if(word == "scissors") {
+                winner.innerHTML = "You Win!";
+            }
+        } else {
+            winner.innerHTML = "they dont match";
+        }
+        computerChoice.innerHTML = word;
+        userInput.value = "";
+    } 
+});
 
 
 //FUNCTIONS
