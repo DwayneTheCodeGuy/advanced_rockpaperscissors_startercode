@@ -35,11 +35,11 @@ rps.addEventListener("click", (event) => {
         let word = words[Math.floor(Math.random() * words.length)];
         console.log(word);
         computerChoice.innerHTML = word;
-        if (userInput.value === word) {
+        if (userInput.value.toLowerCase() === word) {
                 winner.innerHTML = "It's a tie!";
                 userInput.value = "";
             }
-            if (userInput.value === "rock") {
+            if (userInput.value.toLowerCase() === "rock") {
                 if (word === "scissors") {
                     // rock wins
                     winner.innerHTML = "You win!";
@@ -50,7 +50,7 @@ rps.addEventListener("click", (event) => {
                 }
                 userInput.value = "";
             }
-            if (userInput.value === "paper") {
+            if (userInput.value.toLowerCase() === "paper") {
                 if (word === "rock") {
                     // paper wins
                     winner.innerHTML = "You win!";
@@ -60,7 +60,7 @@ rps.addEventListener("click", (event) => {
                 }
                 userInput.value = "";
             }
-            if (userInput.value === "scissors") {
+            if (userInput.value.toLowerCase() === "scissors") {
                 if (word === "rock") {
                     // rock wins
                     winner.innerHTML = "You lose! Try again.";
